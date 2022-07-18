@@ -6,6 +6,6 @@ tagline: Project
 featuredImage: /assets/andrew-seaman-4fi_4q6_efm-unsplash.jpg
 cta:
   ctaText: Know more
-  ctaLink: /about
+  ctaLink: /blog
 ---
 Check the 2022 Project Kaipeng involved in
