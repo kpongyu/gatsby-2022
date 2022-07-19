@@ -204,7 +204,7 @@ const HomePage = ({ data }) => {
   return (
     <Layout>
       <Seo />
-      <div className="home-banner grids col-1 sm-2">
+      <div className="home-banner grids">
         <div>
           <h1 className="title">{frontmatter.title}</h1>
           <p
