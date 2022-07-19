@@ -1,8 +1,8 @@
 ---
 template: blog-post
-title: Neon in Games
-slug: /new-post
-date: 2020-05-09T05:53:16.102Z
+title: NCBI Mutation Viewer
+slug: /ncbi
+date: 2022-07-13 21:13
 description: Neon
 featuredImage: /assets/sebastiaan-stam-5hbrem-5mnq-unsplash.jpg
 ---
