@@ -2,7 +2,7 @@
 template: blog-post
 title: CE Verse
 slug: /ce
-date: 2022-07-13 21:13
+date: 2022-07-11 21:13
 description: metaphorically make a deal with the devil
 featuredImage: /assets/alexander-andrews-zw07kvdahpw-unsplash.jpg
 ---
