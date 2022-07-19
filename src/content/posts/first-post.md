@@ -2,7 +2,7 @@
 template: blog-post
 title: Catalus
 slug: /catalus
-date: 2019-07-10T00:00:00.000Z
+date: 2022-07-14 21:14
 description: sdasd
 featuredImage: /assets/avery-klein-c_drtsnboqa-unsplash.jpg
 ---
