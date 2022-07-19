@@ -1,8 +1,8 @@
 ---
 template: blog-post
-title: Character design
-slug: /character-design
-date: 2020-05-23 23:40
+title: HUD
+slug: /hud
+date: 2022-07-16 21:06
 description: How to draw a character
 featuredImage: /assets/andrew-seaman-4fi_4q6_efm-unsplash.jpg
 ---
