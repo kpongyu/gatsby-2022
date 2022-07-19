@@ -1,8 +1,8 @@
 ---
 template: blog-post
-title: Extreme gaming extravaganza
-slug: /gaming-extravaganza
-date: 2020-05-13 12:55
+title: DTE
+slug: /dte
+date: 2022-07-17 21:06
 description: How we scaled an Extreme gaming extravaganza
 featuredImage: /assets/fredrick-tendong-hvyepjyehdq-unsplash.jpg
 ---
