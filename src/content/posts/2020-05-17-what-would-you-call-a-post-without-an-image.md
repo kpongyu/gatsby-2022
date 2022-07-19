@@ -1,10 +1,9 @@
 ---
 template: blog-post
-title: Plant on my desk is a friend
-slug: /post-no-image
-date: 2020-05-11 08:40
+title: ITS4US
+slug: /its
+date: 2022-07-14 21:11
 description: Post with no image
 featuredImage: /assets/annie-spratt-hx_hf2lppuu-unsplash.jpg
 ---
-
-Hello i am post without an image
+https://bnmc.org/its4us-buffalo/
