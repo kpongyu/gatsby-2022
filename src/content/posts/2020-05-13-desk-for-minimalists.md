@@ -25,3 +25,9 @@ https://accelerator.nyc/building-action
 https://accelerator.nyc/contractor
 
 ![Find Contractor](/assets/find-contractor.png "Find Contractor")
+
+## Building Energy Snapshot:
+
+https://acceleratordev.prod.acquia-sites.com/building-energy-snapshot
+
+![Building Energy Snapshot](/assets/screen-shot-2022-11-27-at-3.08.11-pm.png "Building Energy Snapshot")
