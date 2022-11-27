@@ -2,7 +2,7 @@
 template: blog-post
 title: NYC Accelerator
 slug: /nyca
-date: 2022-07-18 20:16
+date: 2022-11-27 20:16
 description: sdasd
 featuredImage: /assets/nyca-homepage.png
 ---
