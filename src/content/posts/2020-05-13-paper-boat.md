@@ -2,7 +2,7 @@
 template: blog-post
 title: HUD
 slug: /hud
-date: 2022-07-16 21:06
+date: 2022-10-20 21:06
 description: hud
 featuredImage: /assets/hud-project-lib.jpg
 ---
