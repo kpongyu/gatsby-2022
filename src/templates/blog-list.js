@@ -66,18 +66,19 @@ const FilterButtons = ({ onFilterChange }) => {
       >
         All Projects
       </button>
+       <button
+        className={activeFilter === "2023" ? "active" : ""}
+        onClick={() => handleFilterChange("2023")}
+      >
+        Projects in 2023
+      </button>
       <button
         className={activeFilter === "2022" ? "active" : ""}
         onClick={() => handleFilterChange("2022")}
       >
         Projects in 2022
       </button>
-      <button
-        className={activeFilter === "2021" ? "active" : ""}
-        onClick={() => handleFilterChange("2021")}
-      >
-        Projects in 2021
-      </button>
+     
     </div>
   );
 };
