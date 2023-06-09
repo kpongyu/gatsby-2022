@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: HHS Repatriation
-slug: repatriation
+slug: /repatriation
 date: 2023-06-09 15:54
 description: HHS Repatriation page design
 featuredImage: /assets/page-template-home-page-repatriates.jpg
