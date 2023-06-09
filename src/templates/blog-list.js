@@ -74,7 +74,7 @@ const FilterButtons = ({ activeFilter, onFilterChange }) => (
 
 const Pagination = props => {
   const filteredPosts = props.posts;
-  const hasPagination = filteredPosts.length > 0;
+  const hasPagination = filteredPosts && filteredPosts.length > 0;
 
   if (hasPagination) {
     return (
