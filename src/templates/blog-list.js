@@ -59,21 +59,21 @@ const FilterButtons = ({ onFilterChange }) => {
   };
 
   return (
-    <div>
+    <div className="mb-3">
       <button
-        className={activeFilter === null ? "active" : ""}
+        className={activeFilter === null ? "button active" : "button"}
         onClick={() => handleFilterChange(null)}
       >
         All Projects
       </button>
       <button
-        className={activeFilter === "2023" ? "active" : ""}
+        className={activeFilter === "2023" ? "button active" : "button"}
         onClick={() => handleFilterChange("2023")}
       >
         Projects in 2023
       </button>
       <button
-        className={activeFilter === "2022" ? "active" : ""}
+        className={activeFilter === "2022" ? "button active" : "button"}
         onClick={() => handleFilterChange("2022")}
       >
         Projects in 2022
