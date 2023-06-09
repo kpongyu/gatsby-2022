@@ -34,7 +34,7 @@ export const blogListQuery = graphql`
           id
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "YYYY")
+            date(formatString: "MMMM DD, YYYY")
             slug
             title
             featuredImage {
@@ -52,15 +52,16 @@ export const blogListQuery = graphql`
 const FilterButtons = ({ onFilterChange }) => (
   <div>
     <button onClick={() => onFilterChange(null)}>All Projects</button>
-    <button onClick={() => onFilterChange("2022")}>Projects in 2022</button>
-    <button onClick={() => onFilterChange("2021")}>Projects in 2021</button>
+    <button onClick={() => onFilterChange(2022)}>Projects in 2022</button>
+    <button onClick={() => onFilterChange(2021)}>Projects in 2021</button>
   </div>
 );
 
 const Pagination = props => {
-  const noProjectsIn2021 = props.posts.every(post => post.node.frontmatter.date !== "2021");
+  const filteredPosts = props.posts;
+  const hasPagination = filteredPosts.length > 0;
 
-  if (props.posts.length > 0 && !noProjectsIn2021) {
+  if (hasPagination) {
     return (
       <div className="pagination" sx={styles.pagination}>
         <ul>
@@ -106,13 +107,13 @@ class BlogIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: null,
+      filter: null
     };
   }
 
-  handleFilterChange = filter => {
+  handleFilterChange = (filter) => {
     this.setState({ filter });
-  };
+  }
 
   render() {
     const { data } = this.props;
@@ -123,12 +124,12 @@ class BlogIndex extends React.Component {
     const prevPage = currentPage - 1 === 1 ? blogSlug : blogSlug + (currentPage - 1).toString();
     const nextPage = blogSlug + (currentPage + 1).toString();
 
-    const posts = data.allMarkdownRemark.edges
+    const allPosts = data.allMarkdownRemark.edges;
+    const filteredPosts = allPosts
       .filter(edge => !!edge.node.frontmatter.date)
-      .filter(edge =>
-        this.state.filter ? edge.node.frontmatter.date.includes(this.state.filter.toString()) : true
-      )
-      .map(edge => <PostCard key={edge.node.id} data={edge.node} />);
+      .filter(edge => this.state.filter ? edge.node.frontmatter.date.includes(this.state.filter.toString()) : true);
+
+    const posts = filteredPosts.map(edge => <PostCard key={edge.node.id} data={edge.node} />);
 
     let props = {
       isFirst,
