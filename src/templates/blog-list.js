@@ -48,6 +48,15 @@ export const blogListQuery = graphql`
     }
   }
 `
+
+const FilterButtons = ({ onFilterChange }) => (
+  <div>
+    <button onClick={() => onFilterChange(null)}>All Projects</button>
+    <button onClick={() => onFilterChange(2022)}>Projects in 2022</button>
+    <button onClick={() => onFilterChange(2021)}>Projects in 2021</button>
+  </div>
+)
+
 const Pagination = props => (
   <div className="pagination" sx={styles.pagination}>
     <ul>
@@ -84,7 +93,19 @@ const Pagination = props => (
     </ul>
   </div>
 )
+
 class BlogIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filter: null
+    };
+  }
+
+  handleFilterChange = (filter) => {
+    this.setState({ filter });
+  }
+
   render() {
     const { data } = this.props
     const { currentPage, numPages } = this.props.pageContext
@@ -97,7 +118,9 @@ class BlogIndex extends React.Component {
 
     const posts = data.allMarkdownRemark.edges
       .filter(edge => !!edge.node.frontmatter.date)
+      .filter(edge => this.state.filter ? edge.node.frontmatter.date.includes(this.state.filter.toString()) : true)
       .map(edge => <PostCard key={edge.node.id} data={edge.node} />)
+      
     let props = {
       isFirst,
       prevPage,
@@ -117,6 +140,7 @@ class BlogIndex extends React.Component {
           }
         />
         <h1>Projects</h1>
+        <FilterButtons onFilterChange={this.handleFilterChange} />
         <div className="grids col-1 sm-2 lg-3">{posts}</div>
         <Pagination {...props} />
       </Layout>
