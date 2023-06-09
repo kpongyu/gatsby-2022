@@ -51,7 +51,7 @@ export const blogListQuery = graphql`
 
 
 const FilterButtons = ({ onFilterChange }) => {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeFilter, setActiveFilter] = useState(null);
 
   const handleFilterChange = (filter) => {
     setActiveFilter(filter);
@@ -61,12 +61,12 @@ const FilterButtons = ({ onFilterChange }) => {
   return (
     <div>
       <button
-        className={activeFilter === "null" ? "active" : ""}
-        onClick={() => handleFilterChange("null")}
+        className={activeFilter === null ? "active" : ""}
+        onClick={() => handleFilterChange(null)}
       >
         All Projects
       </button>
-       <button
+      <button
         className={activeFilter === "2023" ? "active" : ""}
         onClick={() => handleFilterChange("2023")}
       >
@@ -78,10 +78,10 @@ const FilterButtons = ({ onFilterChange }) => {
       >
         Projects in 2022
       </button>
-     
     </div>
   );
 };
+
 
 
 
