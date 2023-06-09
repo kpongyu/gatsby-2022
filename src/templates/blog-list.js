@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import React from "react";
+import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
 import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri";
 import Layout from "../components/layout";
@@ -49,13 +49,41 @@ export const blogListQuery = graphql`
   }
 `;
 
-const FilterButtons = ({ onFilterChange }) => (
-  <div>
-    <button onClick={() => onFilterChange(null)}>All Projects</button>
-    <button onClick={() => onFilterChange(2022)}>Projects in 2022</button>
-    <button onClick={() => onFilterChange(2021)}>Projects in 2021</button>
-  </div>
-);
+
+const FilterButtons = ({ onFilterChange }) => {
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const handleFilterChange = (filter) => {
+    setActiveFilter(filter);
+    onFilterChange(filter);
+  };
+
+  return (
+    <div>
+      <button
+        className={activeFilter === "all" ? "active" : ""}
+        onClick={() => handleFilterChange("all")}
+      >
+        All Projects
+      </button>
+      <button
+        className={activeFilter === "2022" ? "active" : ""}
+        onClick={() => handleFilterChange("2022")}
+      >
+        Projects in 2022
+      </button>
+      <button
+        className={activeFilter === "2021" ? "active" : ""}
+        onClick={() => handleFilterChange("2021")}
+      >
+        Projects in 2021
+      </button>
+    </div>
+  );
+};
+
+
+
 
 const Pagination = props => {
   const filteredPosts = props.posts;
