@@ -61,8 +61,8 @@ const FilterButtons = ({ onFilterChange }) => {
   return (
     <div>
       <button
-        className={activeFilter === "all" ? "active" : ""}
-        onClick={() => handleFilterChange("all")}
+        className={activeFilter === "null" ? "active" : ""}
+        onClick={() => handleFilterChange("null")}
       >
         All Projects
       </button>
