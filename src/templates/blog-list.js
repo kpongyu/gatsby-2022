@@ -59,7 +59,7 @@ const FilterButtons = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="mb-3">
+    <div className="filters-row">
       <button
         className={activeFilter === null ? "button active" : "button"}
         onClick={() => handleFilterChange(null)}

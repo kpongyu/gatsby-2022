@@ -354,6 +354,23 @@ article img {
   }
 }
 
+.filters-row{
+  margin-bottom: 20px;
+
+  button{
+    cursor: pointer;
+    &:hover{
+      background-color: var(--theme-ui-colors-siteColor);
+      color: white;
+
+    }
+  }
+  button.active{
+     background-color: var(--theme-ui-colors-siteColor);
+     color: white;
+  }
+}
+
 .pagination {
   text-align: center;
   padding: 50px 0;
