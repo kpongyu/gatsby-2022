@@ -49,11 +49,26 @@ export const blogListQuery = graphql`
   }
 `;
 
-const FilterButtons = ({ onFilterChange }) => (
+const FilterButtons = ({ activeFilter, onFilterChange }) => (
   <div>
-    <button onClick={() => onFilterChange(null)}>All Projects</button>
-    <button onClick={() => onFilterChange(2022)}>Projects in 2022</button>
-    <button onClick={() => onFilterChange(2021)}>Projects in 2021</button>
+    <button
+      onClick={() => onFilterChange(null)}
+      className={activeFilter === null ? "active" : ""}
+    >
+      All Projects
+    </button>
+    <button
+      onClick={() => onFilterChange(2022)}
+      className={activeFilter === 2022 ? "active" : ""}
+    >
+      Projects in 2022
+    </button>
+    <button
+      onClick={() => onFilterChange(2021)}
+      className={activeFilter === 2021 ? "active" : ""}
+    >
+      Projects in 2021
+    </button>
   </div>
 );
 
@@ -107,13 +122,13 @@ class BlogIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: null
+      filter: null,
     };
   }
 
-  handleFilterChange = (filter) => {
+  handleFilterChange = filter => {
     this.setState({ filter });
-  }
+  };
 
   render() {
     const { data } = this.props;
@@ -121,15 +136,22 @@ class BlogIndex extends React.Component {
     const blogSlug = "/blog/";
     const isFirst = currentPage === 1;
     const isLast = currentPage === numPages;
-    const prevPage = currentPage - 1 === 1 ? blogSlug : blogSlug + (currentPage - 1).toString();
+    const prevPage =
+      currentPage - 1 === 1 ? blogSlug : blogSlug + (currentPage - 1).toString();
     const nextPage = blogSlug + (currentPage + 1).toString();
 
     const allPosts = data.allMarkdownRemark.edges;
     const filteredPosts = allPosts
       .filter(edge => !!edge.node.frontmatter.date)
-      .filter(edge => this.state.filter ? edge.node.frontmatter.date.includes(this.state.filter.toString()) : true);
+      .filter(edge =>
+        this.state.filter
+          ? edge.node.frontmatter.date.includes(this.state.filter.toString())
+          : true
+      );
 
-    const posts = filteredPosts.map(edge => <PostCard key={edge.node.id} data={edge.node} />);
+    const posts = filteredPosts.map(edge => (
+      <PostCard key={edge.node.id} data={edge.node} />
+    ));
 
     let props = {
       isFirst,
@@ -139,7 +161,6 @@ class BlogIndex extends React.Component {
       currentPage,
       isLast,
       nextPage,
-      posts,
     };
 
     return (
@@ -149,7 +170,10 @@ class BlogIndex extends React.Component {
           description={"Stackrole base blog page " + currentPage + " of " + numPages}
         />
         <h1>Projects</h1>
-        <FilterButtons onFilterChange={this.handleFilterChange} />
+        <FilterButtons
+          activeFilter={this.state.filter}
+          onFilterChange={this.handleFilterChange}
+        />
         <div className="grids col-1 sm-2 lg-3">{posts}</div>
         <Pagination {...props} />
       </Layout>
