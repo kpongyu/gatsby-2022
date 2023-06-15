@@ -9,3 +9,7 @@ featuredImage: /assets/page-template-home-page-repatriates.jpg
 **H﻿omepage:**
 
 ![](/assets/page-template-home-page-repatriates.jpg)
+
+**L﻿earning center:**
+
+![](/assets/learning-center.jpg)
