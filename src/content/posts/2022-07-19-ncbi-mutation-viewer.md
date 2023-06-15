@@ -2,7 +2,7 @@
 template: blog-post
 title: NCBI Mutation Viewer
 slug: /ncbi
-date: 2022-07-14 21:17
+date: 2023-04-06 21:17
 description: ncbi
 featuredImage: /assets/mutation-viewer.png
 ---
