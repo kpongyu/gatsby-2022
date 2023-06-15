@@ -23,3 +23,11 @@ NCBI Blog:
 https://ncbiinsights.ncbi.nlm.nih.gov/2022/04/20/sars-cov-2-variants-overview/
 
 ![Blog](/assets/blog.png "Bllog")
+
+**M﻿VP 2**
+
+![](/assets/1.2.2-search-by-lineage-selected-area-chart.jpg)
+
+![](/assets/1.3-search-by-lineage-geo-selected.jpg)
+
+![](/assets/2.2.1-search-by-mutation-format-error.jpg)
